@@ -30,6 +30,7 @@ strFinal = strFinal + `Вартість всіх товарів ${sumTotal} <br/
 // Відкиньте копійки у всіх товарів, потім – складіть цілу частину вартості кожного товару між собою. 
 // Округлення використовувати в МЕНЬШУ сторону. 
 console.log(Math.floor(price1)+Math.floor(price2)+Math.floor(price3));
+document.writeln("<h5> Вартість всіх товарів без копійок "+Math.floor(price1)+Math.floor(price2)+Math.floor(price3)+"</h5>");
 
 strFinal = strFinal + `Вартість всіх товарів без копійок ${Math.floor(price1)+Math.floor(price2)+Math.floor(price3)} <br/>`;
 
