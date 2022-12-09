@@ -30,15 +30,15 @@ strFinal = strFinal + `Вартість всіх товарів ${sumTotal} <br/
 // Відкиньте копійки у всіх товарів, потім – складіть цілу частину вартості кожного товару між собою. 
 // Округлення використовувати в МЕНЬШУ сторону. 
 console.log(Math.floor(price1)+Math.floor(price2)+Math.floor(price3));
-document.writeln("<h5> Вартість всіх товарів без копійок "+Math.floor(price1)+Math.floor(price2)+Math.floor(price3)+"</h5>");
+document.writeln("<h5> Вартість всіх товарів без копійок "+(Math.floor(price1)+Math.floor(price2)+Math.floor(price3))+"</h5>");
 
 strFinal = strFinal + `Вартість всіх товарів без копійок ${Math.floor(price1)+Math.floor(price2)+Math.floor(price3)} <br/>`;
 
 // Виведіть суму товарів округлену до сотень. (Наприклад якщо вийшло 260, то виведіть 300) 
 console.log(Math.ceil((price1+price2+price3)/100)*100);
-document.writeln("<h5> сума товарів "+Math.ceil((price1+price2+price3)/100)*100+"</h5>");
+document.writeln("<h5> сума товарів "+Math.round((price1+price2+price3)/100)*100+"</h5>");
 
-strFinal = strFinal + `Сума товарів округлена до сотень ${Math.ceil((price1+price2+price3)/100)*100} <br/>`;
+strFinal = strFinal + `Сума товарів округлена до сотень ${Math.round((price1+price2+price3)/100)*100} <br/>`;
 
 // Виведіть булеве значення: чи є сума всіх товарів (округлена в меншу сторону) парним чи непарним числом? 
 console.log(Math.floor(price1+price2+price3)%2 === 0);
