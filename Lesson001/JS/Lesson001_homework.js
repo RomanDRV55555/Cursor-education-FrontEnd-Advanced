@@ -16,14 +16,14 @@ strFinal = strFinal + `Максимальна ціна ${Math.max(price1,price2,
 
 //Використовуючи вбудований об'єкт Math – виведіть мінімальне число
 console.log(Math.min(price1, price2, price3));
-document.writeln("<h5>"+Math.min(price1, price2, price3)+"</h5>");
+document.writeln("<h5> Мінімальна ціна "+Math.min(price1, price2, price3)+"</h5>");
 
 strFinal = strFinal + `Мінімальна ціна ${Math.min(price1, price2, price3)} <br/>`;
 
 // Складіть вартість всіх товарів, помістіть її в змінну та виведіть цю суму 
 const sumTotal = price1 + price2 + price3;
 console.log(sumTotal);
-document.writeln("<h5>"+sumTotal+"</h5>");
+document.writeln("<h5> Вартість всіх товарів "+sumTotal+"</h5>");
 
 strFinal = strFinal + `Вартість всіх товарів ${sumTotal} <br/>`;
 
