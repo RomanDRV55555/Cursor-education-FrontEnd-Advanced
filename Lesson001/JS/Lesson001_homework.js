@@ -35,7 +35,7 @@ document.writeln("<h5> Вартість всіх товарів без копі�
 strFinal = strFinal + `Вартість всіх товарів без копійок ${Math.floor(price1)+Math.floor(price2)+Math.floor(price3)} <br/>`;
 
 // Виведіть суму товарів округлену до сотень. (Наприклад якщо вийшло 260, то виведіть 300) 
-console.log(Math.ceil((price1+price2+price3)/100)*100);
+console.log(Math.round((price1+price2+price3)/100)*100);
 document.writeln("<h5> сума товарів "+Math.round((price1+price2+price3)/100)*100+"</h5>");
 
 strFinal = strFinal + `Сума товарів округлена до сотень ${Math.round((price1+price2+price3)/100)*100} <br/>`;
