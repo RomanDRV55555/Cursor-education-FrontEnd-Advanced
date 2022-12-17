@@ -113,15 +113,41 @@ function deleteLetters(symbolForDelete = "", wordForProc = ""){
 
     // return result;
 
-    result = wordForDelSymbol;
-    debugger
+    result = wordForProc;
     while(new RegExp(symbolForDelete, "i").test(result)){
-        result.replace(symbolForDelete,"")
+        result = result.replace(symbolForDelete,"")
     }
 
     return result;
 } 
 
+function isPalyndrom(wordForCheck = ""){
+
+    let resultisPalyndrom = true;
+
+    for (let i=0; i <= (wordForCheck.length/2); i++) {
+        if (!(wordForCheck[i] == wordForCheck[wordForCheck.length - i - 1])){
+            resultisPalyndrom = false;
+            break;                
+        }
+    }
+
+    return resultisPalyndrom;
+
+}
+
+function deleteDuplicateLetter(wordForCheckDuplicate = ""){
+
+    let resultWord = wordForCheckDuplicate;
+
+    for (let i = 0; i < wordForCheckDuplicate.length; i++){
+        if (countLetter(wordForCheckDuplicate[i],resultWord) > 1){
+            resultWord = deleteLetters(wordForCheckDuplicate[i],resultWord);
+        }
+    }
+
+    return resultWord;
+}
 
 const intNumber = 123424;
 document.writeln(`Функція №1. Найбільша цифра в числі ${intNumber} це ${getMaxDigit(intNumber)} <br>`);
@@ -141,6 +167,12 @@ const strSum = "100$";
 document.writeln(`Функція №7. '${strSum}' дорівнює ${converter(strSum)} <br>`);
 const  numberOfSymbols = 11;
 document.writeln(`Функція №8. Випадковий пароль з '${numberOfSymbols}' символів буде ${getRandomPassword(numberOfSymbols)} <br>`);
-const  wordForDelSymbol = "expression";
+const  wordForDelSymbol = "expression with only six soap";
 const curSymbolForDel = "s";
-document.writeln(`Функція №9. Слово '${wordForDelSymbol}' після видалення символа ${curSymbolForDel} буде вигладати так ${deleteLetters(curSymbolForDel, wordForDelSymbol)} <br>`);
+document.writeln(`Функція №9. Речення '${wordForDelSymbol}' після видалення символа ${curSymbolForDel} буде вигладати так ${deleteLetters(curSymbolForDel, wordForDelSymbol)} <br>`);
+const wordPalyndrom = "excpcxe";
+document.writeln(`Функція №10. Чі є рядок '${wordPalyndrom}' поліндромом? ${isPalyndrom(wordPalyndrom)} <br>`);
+const wordNonPalyndrom = "excpncxe";
+document.writeln(`Функція №10. Чі є рядок '${wordNonPalyndrom}' поліндромом? ${isPalyndrom(wordNonPalyndrom)} <br>`);
+const  curWordForCheckDuplicate = "six sisters for seven seats";
+document.writeln(`Функція №11. Речення '${curWordForCheckDuplicate}' після видалення дублюючих символів буде вигладати так ${deleteDuplicateLetter(curWordForCheckDuplicate)} <br>`);
