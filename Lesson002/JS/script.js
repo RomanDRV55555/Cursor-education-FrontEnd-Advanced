@@ -1,31 +1,70 @@
-const strN = prompt("Введіть N");
-const N = Number(strN);
-if (Number.isInteger(N)){
 
-    const strM = prompt("Введіть M");
-    const M = Number(strM);
-    if (Number.isInteger(M)){
+const N = inputN();
+const M = inputM(); 
 
-        if (N <=M ){
+if (validatedNM(N,M)) {
+    const isSkipEven = confirm("Пропускати парні числа?");
 
-            const isSkipEven = confirm("Пропускати парні числа?");
+    let sum = 0;
+    
+    for(i = N; i <=M; i++){
+        if (isSkipEven) {
+            if (!(i%2 === 0)){sum +=i;}
+        } else{sum +=i;}
+    }    
+    document.writeln(`<h3>Сума дорівнює ${sum}<\h3>`);
+};
 
-            let sum = 0;
-            
-            for(i = N; i <=M; i++){
-                if (isSkipEven) {
-                    if (!(i%2 === 0)){sum +=i;}
-                } else{sum +=i;}
-            }    
-
-            document.writeln(`<h3>Сума дорівнює ${sum}<\h3>`);
-
-        } else {
-            alert(`${N} більше ніж ${M}. Обробка даних неможлива`);
+function inputM() {
+    let currentM = +prompt("Введіть M", 0);
+    while(currentM < 0 || isNaN(currentM)){
+        if (!confirm(`Введене невірне значення M - ${currentM}. Повторити введення?`)){
+            break;        
         }
-    } else {
-        alert(`${strM} не є цілим числом`);
+        currentM = +prompt("Введіть M", 0);
     }
-} else {
-    alert(`${strN} не є цілим числом`);
+
+    return currentM;
+};
+
+function inputN(){
+    let currentN = -1;
+    do {
+        currentN = +prompt("Введіть N", 0);
+        if(currentN < 0 || isNaN(currentN)) {
+            if (!confirm(`Введене невірне значення N - ${currentN}. Повторити введення?`)){
+                break;        
+            } 
+        } else { break; };
+    } while(true);
+    
+    return currentN;
+}
+
+function validatedNM(N, M){
+    let isValidated = true;
+
+    let errText = "";
+
+    if (N > M){
+        errText +=`${N} більше ніж ${M}. `;
+        isValidated = false;
+    } 
+
+    if (isNaN(N)){
+        errText +=`N не є числом. `;
+        isValidated = false;
+    }
+
+    if (isNaN(M)){
+        errText +=`M не є числом. `;
+        isValidated = false;
+    }
+
+    if (!isValidated) {
+        errText +=` Обробка даних неможлива`;
+        alert(errText);
+    }
+
+    return isValidated;
 }
