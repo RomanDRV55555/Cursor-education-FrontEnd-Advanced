@@ -125,7 +125,7 @@ function isPalyndrom(wordForCheck = ""){
 
     let resultisPalyndrom = true;
 
-    for (let i=0; i <= (wordForCheck.length/2); i++) {
+    for (let i=0; i < (wordForCheck.length/2); i++) {
         if (!(wordForCheck[i] == wordForCheck[wordForCheck.length - i - 1])){
             resultisPalyndrom = false;
             break;                
