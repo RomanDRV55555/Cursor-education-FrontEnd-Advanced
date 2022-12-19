@@ -3,11 +3,20 @@ const themes = ["Диференційне рівняння", "Теорія ав�
 const marks = [4, 5, 5, 3, 4, 5]; 
 
 const pairs = getPairs();
-document.writeln(`Результат виклику getPairs() ${getPairs()} <br>`);
-document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${getPairsThemes(pairs, themes)} <br>`);
-document.writeln(`Результат виклику getStudentsMarks(students, marks) ${getStudentsMarks(students, marks)} <br>`);
-// навмисно не використовую змінну
-document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${getMarksPairs(getPairsThemes(pairs, themes))} <br>`);
+document.writeln(`Результат виклику getPairs() ${pairs} <br>`);
+console.log(pairs);
+
+const pairsThemes = getPairsThemes(pairs, themes);
+document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${pairsThemes} <br>`);
+console.log(pairsThemes);
+
+const studentsMarks = getStudentsMarks(students, marks);
+document.writeln(`Результат виклику getStudentsMarks(students, marks) ${studentsMarks} <br>`);
+console.log(studentsMarks);
+
+const marksPairs = getMarksPairs(pairsThemes);
+document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${marksPairs} <br>`);
+console.log(marksPairs);
 
 
 // створює пари з масиву студентів 
@@ -44,7 +53,7 @@ function getStudentsMarks(students = [], marks = []){
 
     const arrStudentsMarks = []; 
 
-    for (let i = 0; i<(Math.min(students.length, themes.length)); i++){
+    for (let i = 0; i<(Math.min(students.length, marks.length)); i++){
         arrStudentsMarks.push([students[i], marks[i]]);
     }
 
