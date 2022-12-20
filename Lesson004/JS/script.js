@@ -26,8 +26,10 @@ function getPairs(students = []){
 
     const arrPair = [];
 
-    for (let i = 0; i < arrFemaleNames.length; i++){
-        arrPair.push([arrMaleNames[i], arrFemaleNames[i]])
+    // приклад використання for of 
+    for (let curElementFemaleNames of arrFemaleNames){
+        // приклад використання indexOf
+        arrPair.push([arrMaleNames[arrFemaleNames.indexOf(curElementFemaleNames)], curElementFemaleNames])
     }
 
     return arrPair;
@@ -39,6 +41,7 @@ function getPairsThemes(pairs = [], themes = []){
 
     const arrPairsThemes = [];
 
+    // співставляння єлементів theme в обратному порядку 
     const numbersOfElemens = Math.min(pairs.length, themes.length);
     for (let i = 0; i< numbersOfElemens; i++){
         arrPairsThemes.push([pairs[i], themes[numbersOfElemens - i - 1]]);
@@ -66,6 +69,7 @@ function getMarksPairs(pairsThemes = []){
 
     const arrMarksPairs = [];
 
+    // приклад використання forEach 
     pairsThemes.forEach(curElement => {
         arrMarksPairs.push([curElement, Math.round(Math.random() * (5 - 1) + 1)]);
     });
