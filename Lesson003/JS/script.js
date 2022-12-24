@@ -20,7 +20,8 @@ function mathPow(num, pow){
     return result;
 }
 
-function formatName(nameForFormat){
+function formatName(nameForFormat = ""){
+    /* it's wrong decision
     let newName = "";
     if (typeof nameForFormat === 'string' || nameForFormat instanceof String){        
          for (let i = 0; i < nameForFormat.length; i++){
@@ -29,7 +30,9 @@ function formatName(nameForFormat){
             } else {newName += nameForFormat[i].toLowerCase();}
          }
     }
-    return newName;
+    return newName;*/
+
+    return nameForFormat.charAt(0).toUpperCase() + nameForFormat.slice(1).toLowerCase();
 }
 
 function netSalary(salaryIn){
@@ -123,6 +126,7 @@ function deleteLetters(symbolForDelete = "", wordForProc = ""){
 
 function isPalyndrom(wordForCheck = ""){
 
+    /* it's wrong decision
     let resultisPalyndrom = true;
 
     for (let i=0; i < (wordForCheck.length/2); i++) {
@@ -132,7 +136,9 @@ function isPalyndrom(wordForCheck = ""){
         }
     }
 
-    return resultisPalyndrom;
+    return resultisPalyndrom;*/
+
+    return wordForCheck.split('').reverse().join('') === wordForCheck;
 
 }
 
