@@ -63,9 +63,20 @@ function getDividedByFive(...numbers){
     return numbers.filter((curElement) => ((curElement%5)===0));
 }
 
-function replaceBadWords(string, arrBadWords = ['fuck', 'shit']){
+function replaceBadWords(string = "", arrBadWords = ['fuck', 'shit']){
 
-    
+    // поки роблю так як можу, потім може шось перероблю
+
+    const arrWords = string.split(" ");
+
+    arrWords.forEach((curElement,i,arrBadWords) => ({
+
+        
+
+    }));
+
+
+    // string.split(" ").forEach((curElement) => (curElement = arrBadWords.forEach())    
 
 }
 
