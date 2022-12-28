@@ -69,16 +69,46 @@ function replaceBadWords(string = "", arrBadWords = ['fuck', 'shit']){
 
     const arrWords = string.split(" ");
 
-    arrWords.forEach((curElement,i,arrBadWords) => ({
+    for (i=0; i < arrWords.length; i++){
+        for(b=0; b < arrBadWords.length; b++){
+            arrWords[i] = arrWords[i].replace(arrBadWords[b],new Array(arrBadWords[b].length).fill('*').join(''));
+        }
+    };
 
-        
-
-    }));
-
-
-    // string.split(" ").forEach((curElement) => (curElement = arrBadWords.forEach())    
+    return arrWords.join(' ');
 
 }
+
+function divideByThree(word = '') {
+
+    const arrResult = [];
+
+    let i = 0;
+    let curSyllable = '';
+
+    for(i=0;i<word.length;i++){
+        // замість перевірки можна зробити новий масив без пробілів через filter 
+        if (word[i] === ' '){
+            continue;
+        }
+        if (curSyllable.length === 3){
+            arrResult.push(curSyllable);
+            curSyllable = '';
+        }
+        curSyllable += word[i].toLowerCase();
+    }
+
+    if (curSyllable.length>0){
+        arrResult.push(curSyllable);
+    }
+
+    return arrResult;
+
+}
+
+// function generateCombinations(word){
+
+// }
 
 console.log(getRandomArray(5, 6, 9));
 
@@ -100,3 +130,12 @@ console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 
 console.log(replaceBadWords("Are you fucking kidding?"));
 console.log(replaceBadWords("Holy shit!"));
 console.log(replaceBadWords("It's bullshit!"));
+
+console.log(divideByThree("Commander"));
+console.log(divideByThree("Co   mMaND       er"));
+console.log(divideByThree("live"));
+
+
+// console.log(generateCombinations("man"));
+// console.log(generateCombinations("ol"));
+
