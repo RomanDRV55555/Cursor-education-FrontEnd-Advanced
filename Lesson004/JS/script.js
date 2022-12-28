@@ -2,37 +2,18 @@ const students = ["Олександр", "Ігор", "Олена", "Іра", "О�
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"]; 
 const marks = [4, 5, 5, 3, 4, 5]; 
 
-const pairs = getPairs();
-document.writeln(`Результат виклику getPairs() ${pairs} <br>`);
-console.log(pairs);
-
-const pairsThemes = getPairsThemes(pairs, themes);
-document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${pairsThemes} <br>`);
-console.log(pairsThemes);
-
-const studentsMarks = getStudentsMarks(students, marks);
-document.writeln(`Результат виклику getStudentsMarks(students, marks) ${studentsMarks} <br>`);
-console.log(studentsMarks);
-
-const marksPairs = getMarksPairs(pairsThemes);
-document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${marksPairs} <br>`);
-console.log(marksPairs);
-
-
 // створює пари з масиву студентів 
 function getPairs(students = []){
-    const arrMaleNames = ["Олександр", "Ігор", "Олексій"];
-    const arrFemaleNames = ["Олена", "Іра", "Світлана"];
+    const arrMaleNames = students.filter((curElement) => (!(curElement[curElement.length-1] === 'а')));
+    const arrFemaleNames = students.filter((curElement) => (curElement[curElement.length-1] === 'а'));
 
-    const arrPair = [];
+    const pairStudents = [];
 
-    // приклад використання for of 
-    for (let curElementFemaleNames of arrFemaleNames){
-        // приклад використання indexOf
-        arrPair.push([arrMaleNames[arrFemaleNames.indexOf(curElementFemaleNames)], curElementFemaleNames])
-    }
+    for (i = 0; i < arrMaleNames.length; i++){
+        pairStudents.push([arrMaleNames[i], arrFemaleNames[i]]);
+    };
 
-    return arrPair;
+    return pairStudents;
 
 }
 
@@ -44,7 +25,7 @@ function getPairsThemes(pairs = [], themes = []){
     // співставляння єлементів theme в обратному порядку 
     const numbersOfElemens = Math.min(pairs.length, themes.length);
     for (let i = 0; i< numbersOfElemens; i++){
-        arrPairsThemes.push([pairs[i], themes[numbersOfElemens - i - 1]]);
+        arrPairsThemes.push([pairs[i].join(' і '), themes[i]]);
     }
 
     return arrPairsThemes;
@@ -71,8 +52,25 @@ function getMarksPairs(pairsThemes = []){
 
     // приклад використання forEach 
     pairsThemes.forEach(curElement => {
-        arrMarksPairs.push([curElement, Math.round(Math.random() * (5 - 1) + 1)]);
+        arrMarksPairs.push([curElement[0], curElement[1], Math.round(Math.random() * (5 - 1) + 1)]);
     });
 
     return arrMarksPairs;
 }
+
+const pairs = getPairs(students);
+document.writeln(`Результат виклику getPairs() ${pairs} <br>`);
+console.log(pairs);
+
+const pairsThemes = getPairsThemes(pairs, themes);
+document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${pairsThemes} <br>`);
+console.log(pairsThemes);
+
+const studentsMarks = getStudentsMarks(students, marks);
+document.writeln(`Результат виклику getStudentsMarks(students, marks) ${studentsMarks} <br>`);
+console.log(studentsMarks);
+
+const marksPairs = getMarksPairs(pairsThemes);
+document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${marksPairs} <br>`);
+console.log(marksPairs);
+
