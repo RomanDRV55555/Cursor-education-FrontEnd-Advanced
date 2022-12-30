@@ -23,3 +23,86 @@ english: [5, 3],
 cosmology: [5, 5, 5, 5]
 }
 }];
+
+function formatName(nameForFormat = ""){
+    return nameForFormat.charAt(0).toUpperCase() + nameForFormat.slice(1).toLowerCase();
+};
+
+function getAverage(...numbers){
+
+    return numbers.reduce((sum, curElemet) => {
+        if (Number.isInteger(curElemet)){
+            sum += curElemet;
+        }
+        return sum;
+    })/numbers.length;
+};
+
+function countLetter(letterToFind, word){
+    let result = 0;
+
+    if ((typeof word === "string" || word instanceof String)){
+        for (let i = 0; i < word.length; i++){
+            if (word[i] == letterToFind){
+                result ++;
+            }
+        }
+    }
+
+    return result;
+}
+
+function getSubjects(curStudent = {}){
+    if ('subjects' in curStudent){
+        const arrSubjects = Object.keys(curStudent.subjects);
+
+        for (i=0;i<arrSubjects.length;i++){
+            arrSubjects[i] = arrSubjects[i].replace('_',' ');
+            arrSubjects[i] = formatName(arrSubjects[i]);
+        }
+        return arrSubjects;
+
+        }
+
+    };
+
+function getAverageMark(curStudent = {}){
+    if ('subjects' in curStudent){
+        return getAverage(...Object.values(curStudent.subjects).flat()).toFixed(2);
+    }
+};
+
+function getStudentInfo(curStudent = {}){
+    return {
+        course: curStudent['course'],
+        name: curStudent['name'],
+        averageMark: getAverageMark(curStudent)
+    }
+};
+
+function getStudentsNames(arrStudents = []){
+    return arrStudents.map(curEl => (curEl.name)).sort();
+};
+
+function getBestStudent(arrStudents = []){
+    return arrStudents.find(curEl => getAverageMark(curEl) == Math.max(... arrStudents.map(curEl => (getAverageMark(curEl))))).name;
+};
+
+function calculateWordLetters(testWord = ''){
+    acc = {};
+    Array.from(new Set(testWord)).map((curEl) => (acc[curEl] = countLetter(curEl, testWord)));
+    return acc;
+};
+
+console.log('getSubjects(students[0] ',getSubjects(students[0]));
+
+console.log('getAverageMark(students[0]) ', getAverageMark(students[0]));
+
+console.log('getStudentInfo(students[0]) ', getStudentInfo(students[0]));
+
+console.log('getStudentsNames(students) ', getStudentsNames(students));
+
+console.log('getBestStudent(students) ', getBestStudent(students));
+
+console.log('calculateWordLetters("тест") ', calculateWordLetters("тест"));
+
