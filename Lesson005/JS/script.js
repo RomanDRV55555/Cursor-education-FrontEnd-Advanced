@@ -110,30 +110,30 @@ function divideByThree(word = '') {
 
 // }
 
-console.log(getRandomArray(5, 6, 9));
+console.log('getRandomArray getRandomArray(5, 6, 9) ', getRandomArray(5, 6, 9));
 
-console.log(getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) ', getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) ',getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)); 
-console.log(getMedian(1, 2, 3, 4));
-console.log(getMedian(1, 2, 3, 4, 5));
-console.log(getMedian());
+console.log('getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) ',getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)); 
+console.log('getMedian(1, 2, 3, 4) ',getMedian(1, 2, 3, 4));
+console.log('getMedian(1, 2, 3, 4, 5) ',getMedian(1, 2, 3, 4, 5));
+console.log('getMedian()) ',getMedian());
 
-console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log('filterEvenNumbers(1, 2, 3, 4, 5, 6) ',filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
-console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+console.log('countPositiveNumbers(1, -2, 3, -4, -5, 6) ',countPositiveNumbers(1, -2, 3, -4, -5, 6));
 
-console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) ',getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-console.log(replaceBadWords("Are you fucking kidding?"));
-console.log(replaceBadWords("Holy shit!"));
-console.log(replaceBadWords("It's bullshit!"));
+console.log('replaceBadWords("Are you fucking kidding?") ',replaceBadWords("Are you fucking kidding?"));
+console.log('replaceBadWords("Holy shit!")) ',replaceBadWords("Holy shit!"));
+console.log('replaceBadWords(\"It\'s bullshit!\") ',replaceBadWords("It's bullshit!"));
 
-console.log(divideByThree("Commander"));
-console.log(divideByThree("Co   mMaND       er"));
-console.log(divideByThree("live"));
+console.log('divideByThree("Commander") ',divideByThree("Commander"));
+console.log('divideByThree("Co   mMaND       er") ',divideByThree("Co   mMaND       er"));
+console.log('divideByThree("live") ',divideByThree("live"));
 
 
 // console.log(generateCombinations("man"));
