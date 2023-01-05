@@ -33,10 +33,13 @@ function getTotalTaxes() {
 виду: {salary: number, taxes: number, profit: number } кожні 10 секунд. 
 Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes – розраховується в
 залежності від вибраної країни та значення salary.
-    profit = salary - taxes;
-для виводу в консоль кожні 10 секунд використайте setInterval */
+    profit = salary - taxes; */
 function getMySalary(){
-
+    const newObj = {};
+    newObj['salary'] = Math.round(Math.random() * (2000 - 1500) + 1500);
+    newObj['taxes'] = getMyTaxes.call(this, newObj.salary);
+    newObj['profit'] = newObj['salary'] - newObj['taxes'];
+    return newObj
 }
 
 console.log('getMyTaxes.call(ukraine, 1000) ',getMyTaxes.call(ukraine, 1000));
@@ -56,3 +59,6 @@ console.log('getTotalTaxes.call(latvia) ', getTotalTaxes.call(latvia));
 console.log('getTotalTaxes.call(litva) ', getTotalTaxes.call(litva));
 
 console.log('getTotalTaxes.call(99) ',getTotalTaxes.call(1000));
+
+/* для виводу в консоль кожні 10 секунд використайте setInterval  */
+setInterval(() => {console.log('getMySalary(ukraine) ',getMySalary.call(ukraine))}, 10000);
