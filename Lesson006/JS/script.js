@@ -52,9 +52,13 @@ function countLetter(letterToFind, word){
     return result;
 }
 
+// Всі функції що вище, треба перенести туди де вони використовються //
+
 function getSubjects(curStudent = {}){
     if ('subjects' in curStudent){
         const arrSubjects = Object.keys(curStudent.subjects);
+
+// тут треба використати map 
 
         for (i=0;i<arrSubjects.length;i++){
             arrSubjects[i] = arrSubjects[i].replace('_',' ');
