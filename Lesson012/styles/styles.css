@@ -1,0 +1,185 @@
+html {
+    font-size: 17px;
+    font-family: 'Oswald', cursive;
+    background-size: cover;
+    background: black;
+    color: #0000ff;
+    font: clamp(0.75rem, 0.3rem + 1.9vw, 1.5rem)/1.1 'Koulen', sans-serif;
+}
+
+
+/* блок з таблицями */
+.wrap {
+    width: 1310px;
+    margin: 10 auto;
+}
+
+.bblock {
+    float: left; 
+    text-align: center; 
+}
+
+.wrap :last-child {
+    margin-right: 0px;
+}
+
+/* таблиця */
+TABLE {
+    width: 300px;
+    border: 1px radial-gradient(96.04% 78.04% at 45.54% 16.86%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, rgba(0, 0, 255, 0.7) 16.86%, rgba(24, 21, 47, 0.7) 88.24%);
+    ;
+    box-shadow: 0px 4px 120px rgba(41, 103, 121, 0.7);
+    border-radius: 15px;
+}
+
+TD,
+TH {
+    padding: 3px;
+}
+
+TH {
+    text-align: left;
+    background: black;
+    color: white;
+}
+
+/* окремі елементи*/
+
+/* текст */
+.yellowText {
+    font-size: 7px;
+    font-style: italic;
+    color: yellow;
+}
+
+.whiteText {
+    font-size: 15px;
+    font-style: italic;
+    color: white;
+}
+
+/* рамки, блоки*/
+.borderStyle {
+    background: #000000;
+
+    border: 1px solid #eeeff5;
+
+    box-shadow: 0px 0px 22px 9px #5ff98d;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.borderStyleInfo {
+    box-sizing: border-box;
+    font-size: small;
+    line-height: 1.5;
+    display: inline-block;
+
+    height: 250px;
+    width: 550px;
+
+    box-shadow: 0px 4px 55px 5px rgba(255, 255, 255, 0.65);
+    border-radius: 15px;
+}
+
+/* кнопки */
+.buttomStyle1 {
+    width: 165px;
+    height: 51px;
+    left: 210px;
+    top: 751px;
+
+    color: rgb(255, 255, 255);
+
+    background: radial-gradient(96.04% 78.04% at 45.54% 16.86%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, rgba(0, 0, 255, 0.7) 16.86%, rgba(24, 21, 47, 0.7) 88.24%);
+    box-shadow: 0px 4px 120px rgba(41, 103, 121, 0.7);
+    border-radius: 15px;
+}
+
+.buttonstyle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 100%;
+
+    color: rgba(255, 223, 0, 1);
+
+    background: #000000;
+
+    border: 1px solid #5770ff;
+
+    box-shadow: 0px 0px 22px 9px #682bb7;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* перемикач */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border: 1px solid #5770ff;
+
+    box-shadow: 0px 0px 22px 9px #682bb7;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border: 1px solid #5770ff;
+
+    box-shadow: 0px 0px 22px 9px #682bb7;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #0000ff;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #0000ff;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+    .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
