@@ -1,0 +1,35 @@
+.wrap {
+    width: 1310px;
+    margin: 15 auto;
+
+    gap: 17px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
+
+.btn_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5px;
+    gap: 10px;
+    
+    width: 158px;
+    height: 64px;
+
+    font-size: 14px;
+    
+    background: #c0ecf9;
+    box-shadow: -4px -4px 15px rgba(255, 255, 255, 0.5), 4px 4px 15px rgba(0, 0, 0, 0.5), inset -4px -4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;    
+}
