@@ -1,19 +1,19 @@
 
-const N = inputN();
-const M = inputM(); 
+// const N = inputN();
+// const M = inputM(); 
 
-if (validatedNM(N,M)) {
-    const isSkipEven = confirm("Пропускати парні числа?");
+// if (validatedNM(N,M)) {
+//     const isSkipEven = confirm("Пропускати парні числа?");
 
-    let sum = 0;
+//     let sum = 0;
     
-    for(i = N; i <=M; i++){
-        if (isSkipEven) {
-            if (!(i%2 === 0)){sum +=i;}
-        } else{sum +=i;}
-    }    
-    document.writeln(`<h3>Сума дорівнює ${sum}<\h3>`);
-};
+//     for(i = N; i <=M; i++){
+//         if (isSkipEven) {
+//             if (!(i%2 === 0)){sum +=i;}
+//         } else{sum +=i;}
+//     }    
+//     document.writeln(`<h3>Сума дорівнює ${sum}<\h3>`);
+// };
 
 function inputM() {
     let currentM = +prompt("Введіть M", 0);
@@ -68,3 +68,5 @@ function validatedNM(N, M){
 
     return isValidated;
 }
+
+export {validatedNM, inputM, inputN}
