@@ -9,7 +9,7 @@ export default class Post {
     toString () {
         return `<h2> ${this.title} </h2> 
         <p> ${this.text} </p>
-        <p> ${this.img} </p>
+        <img src="${this.img}"> </img>
         <p> ${this.date.toJSON()} </p>`;
     }
 }
