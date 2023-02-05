@@ -15,7 +15,7 @@
   \*************************/
 /***/ (() => {
 
-eval("document.addEventListener('DOMContentLoaded', () => {\n\n    const timerShow = document.createElement('div'),\n    curTime = new Date();\n\n    document.body.appendChild(timerShow);\n    \n    setInterval(() => {\n\n        let msDiff = new Date() - curTime,\n            days = Math.floor(msDiff / (24 * 60 * 60 * 1000)),\n            hours = Math.floor((msDiff / (1000 * 60 * 60)) % 24),\n            minuts = Math.floor((msDiff / 1000 / 60) % 60),\n            seconds = Math.floor((msDiff / 1000) % 60);\n\n        let strTimer = `${Math.trunc(hours)} ${hours == 1 ? 'hour' : 'hours'} ${Math.trunc(minuts)} ${minuts == 1 ? 'minute' : 'minutes'} ${seconds} ${seconds == 1 ? 'second' : 'seconds'}`;\n        timerShow.innerHTML = `You've been here for ${strTimer}`;\n    }, 1000);\n\n})\n\n\n//# sourceURL=webpack:///./JS/analytics.js?");
+eval("document.addEventListener('DOMContentLoaded', function () {\n  var timerShow = document.createElement('div'),\n    curTime = new Date();\n  document.body.appendChild(timerShow);\n  setInterval(function () {\n    var msDiff = new Date() - curTime,\n      days = Math.floor(msDiff / (24 * 60 * 60 * 1000)),\n      hours = Math.floor(msDiff / (1000 * 60 * 60) % 24),\n      minuts = Math.floor(msDiff / 1000 / 60 % 60),\n      seconds = Math.floor(msDiff / 1000 % 60);\n    var strTimer = \"\".concat(Math.trunc(hours), \" \").concat(hours == 1 ? 'hour' : 'hours', \" \").concat(Math.trunc(minuts), \" \").concat(minuts == 1 ? 'minute' : 'minutes', \" \").concat(seconds, \" \").concat(seconds == 1 ? 'second' : 'seconds');\n    timerShow.innerHTML = \"You've been here for \".concat(strTimer);\n  }, 1000);\n});\n\n//# sourceURL=webpack:///./JS/analytics.js?");
 
 /***/ })
 

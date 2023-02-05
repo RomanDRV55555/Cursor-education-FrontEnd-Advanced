@@ -1,6 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -13,6 +13,11 @@ module.exports = {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distr')
     },
+    resolve: {
+        alias: {
+            '@homeworks': path.resolve(__dirname, "../..")
+        }
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html'
@@ -23,8 +28,16 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader','css-loader']
-            }
-        ]
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: 'file-loader',
+            }]
     }
 }
