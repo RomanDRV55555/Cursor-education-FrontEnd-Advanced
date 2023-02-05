@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerShow = document.createElement('div'),
     curTime = new Date();
 
-    document.body.appendChild(timerShow);
+    timerShow.style.color = "black";
+
+    document.getElementById('h2Title').appendChild(timerShow);
     
     setInterval(() => {
 

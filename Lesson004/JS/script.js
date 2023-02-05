@@ -9,7 +9,7 @@ function getPairs(students = []){
 
     const pairStudents = [];
 
-    for (i = 0; i < arrMaleNames.length; i++){
+    for (let i = 0; i < arrMaleNames.length; i++){
         pairStudents.push([arrMaleNames[i], arrFemaleNames[i]]);
     };
 
@@ -58,19 +58,21 @@ function getMarksPairs(pairsThemes = []){
     return arrMarksPairs;
 }
 
-const pairs = getPairs(students);
-document.writeln(`Результат виклику getPairs() ${pairs} <br>`);
-console.log(pairs);
+// const pairs = getPairs(students);
+// document.writeln(`Результат виклику getPairs() ${pairs} <br>`);
+// console.log(pairs);
 
-const pairsThemes = getPairsThemes(pairs, themes);
-document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${pairsThemes} <br>`);
-console.log(pairsThemes);
+// const pairsThemes = getPairsThemes(pairs, themes);
+// document.writeln(`Результат виклику getPairsThemes(pairs, themes) ${pairsThemes} <br>`);
+// console.log(pairsThemes);
 
-const studentsMarks = getStudentsMarks(students, marks);
-document.writeln(`Результат виклику getStudentsMarks(students, marks) ${studentsMarks} <br>`);
-console.log(studentsMarks);
+// const studentsMarks = getStudentsMarks(students, marks);
+// document.writeln(`Результат виклику getStudentsMarks(students, marks) ${studentsMarks} <br>`);
+// console.log(studentsMarks);
 
-const marksPairs = getMarksPairs(pairsThemes);
-document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${marksPairs} <br>`);
-console.log(marksPairs);
+// const marksPairs = getMarksPairs(pairsThemes);
+// document.writeln(`Результат виклику getMarksPairs(getPairsThemes(pairs, themes)) ${marksPairs} <br>`);
+// console.log(marksPairs);
 
+
+export {getPairs, getPairsThemes}
