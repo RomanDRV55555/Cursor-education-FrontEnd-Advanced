@@ -10,7 +10,7 @@ module.exports = {
         analytics: './JS/analytics.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].[id].js',
         path: path.resolve(__dirname, 'distr')
     },
     resolve: {
