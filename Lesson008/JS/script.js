@@ -94,7 +94,7 @@ export class BudgetStudent extends Student {
     } 
 }
 
-newBudgetStudent = new BudgetStudent('КПІ',2,'Степаненко Степан Степанович');
+// newBudgetStudent = new BudgetStudent('КПІ',2,'Степаненко Степан Степанович');
 
 
 

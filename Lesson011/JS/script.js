@@ -1,7 +1,7 @@
 /* Функція getRandomChinese(length) повинна повернути рядок довжиною (length) з
 китайськими ієрогліфами. Час роботи проміса має складати length * 50ms. */
 
-async function getRandomChinese(length = 0) {
+export async function getRandomChinese(length = 0) {
 
     let strResult = '';
     for (i = 1; i <= length; i++) {

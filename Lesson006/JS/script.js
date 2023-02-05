@@ -93,7 +93,7 @@ function getBestStudent(arrStudents = []){
 };
 
 export function calculateWordLetters(testWord = ''){
-    acc = {};
+    let acc = {};
     Array.from(new Set(testWord)).map((curEl) => (acc[curEl] = countLetter(curEl, testWord)));
     return acc;
 };
