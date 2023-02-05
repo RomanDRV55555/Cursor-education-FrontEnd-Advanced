@@ -1,4 +1,4 @@
-function getMaxDigit(intNumber){
+export function getMaxDigit(intNumber){
     if (Number.isInteger(Number(intNumber))){
         let maxNumber = 0;
         let arrNumbers = intNumber.toString();
@@ -12,7 +12,7 @@ function getMaxDigit(intNumber){
     }
 }
 
-function mathPow(num, pow){
+export function mathPow(num, pow){
     let result = num;
     for (let i = 1; i < pow; i++){
         result *= num;       
@@ -20,7 +20,7 @@ function mathPow(num, pow){
     return result;
 }
 
-function formatName(nameForFormat = ""){
+export function formatName(nameForFormat = ""){
     /* it's wrong decision
     let newName = "";
     if (typeof nameForFormat === 'string' || nameForFormat instanceof String){        
@@ -35,19 +35,19 @@ function formatName(nameForFormat = ""){
     return nameForFormat.charAt(0).toUpperCase() + nameForFormat.slice(1).toLowerCase();
 }
 
-function netSalary(salaryIn){
+export function netSalary(salaryIn){
     if (Number.isInteger(salaryIn)){
         return Math.round(salaryIn*(1 - (0.18+0.015)));
     }
 } 
 
-function getRandomNumber(numNIn, numMIn){
+export function getRandomNumber(numNIn, numMIn){
     if (Number.isInteger(numNIn) && Number.isInteger(numMIn)) {
         return Math.round(Math.random() * (numMIn - numNIn) + numNIn);
     }
 }
 
-function countLetter(letterToFind, word){
+export function countLetter(letterToFind, word){
     let result = 0;
 
     if ((typeof word === "string" || word instanceof String)){
@@ -61,7 +61,7 @@ function countLetter(letterToFind, word){
     return result;
 }
 
-function converter(strSum = ''){
+export function converter(strSum = ''){
 
     const USD_KURS = (function (){
         let currKurs = -1;
@@ -95,7 +95,7 @@ function converter(strSum = ''){
     
 }
 
-function getRandomPassword(numberOfSymbols = 8){
+export function getRandomPassword(numberOfSymbols = 8){
     result = "";
 
     for (let i = 0; i<numberOfSymbols; i++){
@@ -105,7 +105,7 @@ function getRandomPassword(numberOfSymbols = 8){
     return result;
 }
 
-function deleteLetters(symbolForDelete = "", wordForProc = ""){
+export function deleteLetters(symbolForDelete = "", wordForProc = ""){
 
     // result = "";
     // for (let i=0; i < wordForProc.length; i++){
@@ -124,7 +124,7 @@ function deleteLetters(symbolForDelete = "", wordForProc = ""){
     return result;
 } 
 
-function isPalyndrom(wordForCheck = ""){
+export function isPalyndrom(wordForCheck = ""){
 
     /* it's wrong decision
     let resultisPalyndrom = true;
@@ -142,7 +142,7 @@ function isPalyndrom(wordForCheck = ""){
 
 }
 
-function deleteDuplicateLetter(wordForCheckDuplicate = ""){
+export function deleteDuplicateLetter(wordForCheckDuplicate = ""){
 
     let resultWord = wordForCheckDuplicate;
 
@@ -155,30 +155,30 @@ function deleteDuplicateLetter(wordForCheckDuplicate = ""){
     return resultWord;
 }
 
-const intNumber = 123424;
-document.writeln(`Функція №1. Найбільша цифра в числі ${intNumber} це ${getMaxDigit(intNumber)} <br>`);
-const num = 2, pow = 6;
-document.writeln(`Функція №2. ${num} в ступіні ${pow} дорівнює ${mathPow(num,pow)} <br>`);
-const nameForFormat = "пАтІннСОН";
-document.writeln(`Функція №3. Форматує ім'я ${nameForFormat} в ${formatName(nameForFormat)} <br>`);
-const salary = 1200;
-document.writeln(`Функція №4. Суму, що залишається після оплати податку від зарабітньої плати ${salary} є ${netSalary(salary)} <br>`);
-const numN = 12;
-const numM = 34;
-document.writeln(`Функція №5. Випадкове ціле число в діапазоні від ${numN} до ${numM} є ${getRandomNumber(numN, numM)} <br>`);
-const letter = "i";
-const word = "classification";
-document.writeln(`Функція №6. Кількість букв '${letter}' в слові '${word}' дорівнює ${countLetter(letter, word)} <br>`);
-const strSum = "100$";
-document.writeln(`Функція №7. '${strSum}' дорівнює ${converter(strSum)} <br>`);
-const  numberOfSymbols = 11;
-document.writeln(`Функція №8. Випадковий пароль з '${numberOfSymbols}' символів буде ${getRandomPassword(numberOfSymbols)} <br>`);
-const  wordForDelSymbol = "expression with only six soap";
-const curSymbolForDel = "s";
-document.writeln(`Функція №9. Речення '${wordForDelSymbol}' після видалення символа ${curSymbolForDel} буде вигладати так ${deleteLetters(curSymbolForDel, wordForDelSymbol)} <br>`);
-const wordPalyndrom = "excpcxe";
-document.writeln(`Функція №10. Чі є рядок '${wordPalyndrom}' поліндромом? ${isPalyndrom(wordPalyndrom)} <br>`);
-const wordNonPalyndrom = "excpncxe";
-document.writeln(`Функція №10. Чі є рядок '${wordNonPalyndrom}' поліндромом? ${isPalyndrom(wordNonPalyndrom)} <br>`);
-const  curWordForCheckDuplicate = "six sisters for seven seats";
-document.writeln(`Функція №11. Речення '${curWordForCheckDuplicate}' після видалення дублюючих символів буде вигладати так ${deleteDuplicateLetter(curWordForCheckDuplicate)} <br>`);
+// const intNumber = 123424;
+// document.writeln(`Функція №1. Найбільша цифра в числі ${intNumber} це ${getMaxDigit(intNumber)} <br>`);
+// const num = 2, pow = 6;
+// document.writeln(`Функція №2. ${num} в ступіні ${pow} дорівнює ${mathPow(num,pow)} <br>`);
+// const nameForFormat = "пАтІннСОН";
+// document.writeln(`Функція №3. Форматує ім'я ${nameForFormat} в ${formatName(nameForFormat)} <br>`);
+// const salary = 1200;
+// document.writeln(`Функція №4. Суму, що залишається після оплати податку від зарабітньої плати ${salary} є ${netSalary(salary)} <br>`);
+// const numN = 12;
+// const numM = 34;
+// document.writeln(`Функція №5. Випадкове ціле число в діапазоні від ${numN} до ${numM} є ${getRandomNumber(numN, numM)} <br>`);
+// const letter = "i";
+// const word = "classification";
+// document.writeln(`Функція №6. Кількість букв '${letter}' в слові '${word}' дорівнює ${countLetter(letter, word)} <br>`);
+// const strSum = "100$";
+// document.writeln(`Функція №7. '${strSum}' дорівнює ${converter(strSum)} <br>`);
+// const  numberOfSymbols = 11;
+// document.writeln(`Функція №8. Випадковий пароль з '${numberOfSymbols}' символів буде ${getRandomPassword(numberOfSymbols)} <br>`);
+// const  wordForDelSymbol = "expression with only six soap";
+// const curSymbolForDel = "s";
+// document.writeln(`Функція №9. Речення '${wordForDelSymbol}' після видалення символа ${curSymbolForDel} буде вигладати так ${deleteLetters(curSymbolForDel, wordForDelSymbol)} <br>`);
+// const wordPalyndrom = "excpcxe";
+// document.writeln(`Функція №10. Чі є рядок '${wordPalyndrom}' поліндромом? ${isPalyndrom(wordPalyndrom)} <br>`);
+// const wordNonPalyndrom = "excpncxe";
+// document.writeln(`Функція №10. Чі є рядок '${wordNonPalyndrom}' поліндромом? ${isPalyndrom(wordNonPalyndrom)} <br>`);
+// const  curWordForCheckDuplicate = "six sisters for seven seats";
+// document.writeln(`Функція №11. Речення '${curWordForCheckDuplicate}' після видалення дублюючих символів буде вигладати так ${deleteDuplicateLetter(curWordForCheckDuplicate)} <br>`);
