@@ -34,7 +34,7 @@ function getTotalTaxes() {
 Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes – розраховується в
 залежності від вибраної країни та значення salary.
     profit = salary - taxes; */
-function getMySalary(){
+export function getMySalary(){
     const newObj = {};
     newObj['salary'] = Math.round(Math.random() * (2000 - 1500) + 1500);
     newObj['taxes'] = getMyTaxes.call(this, newObj.salary);
@@ -42,23 +42,23 @@ function getMySalary(){
     return newObj
 }
 
-console.log('getMyTaxes.call(ukraine, 1000) ',getMyTaxes.call(ukraine, 1000));
-console.log('getMyTaxes.call(latvia, 1000) ', getMyTaxes.call(latvia, 1000));
-console.log('getMyTaxes.call(litva, 1000) ', getMyTaxes.call(litva, 1000));
+// console.log('getMyTaxes.call(ukraine, 1000) ',getMyTaxes.call(ukraine, 1000));
+// console.log('getMyTaxes.call(latvia, 1000) ', getMyTaxes.call(latvia, 1000));
+// console.log('getMyTaxes.call(litva, 1000) ', getMyTaxes.call(litva, 1000));
 
-console.log('getMyTaxes.call(99, 1000) ',getMyTaxes.call(99, 1000));
+// console.log('getMyTaxes.call(99, 1000) ',getMyTaxes.call(99, 1000));
 
-console.log('getMiddleTaxes.call(ukraine) ',getMiddleTaxes.call(ukraine));
-console.log('getMiddleTaxes.call(latvia) ', getMiddleTaxes.call(latvia));
-console.log('getMiddleTaxes.call(litva) ', getMiddleTaxes.call(litva));
+// console.log('getMiddleTaxes.call(ukraine) ',getMiddleTaxes.call(ukraine));
+// console.log('getMiddleTaxes.call(latvia) ', getMiddleTaxes.call(latvia));
+// console.log('getMiddleTaxes.call(litva) ', getMiddleTaxes.call(litva));
 
-console.log('getMiddleTaxes.call(99) ',getMiddleTaxes.call(1000));
+// console.log('getMiddleTaxes.call(99) ',getMiddleTaxes.call(1000));
 
-console.log('getTotalTaxes.call(ukraine) ',getTotalTaxes.call(ukraine));
-console.log('getTotalTaxes.call(latvia) ', getTotalTaxes.call(latvia));
-console.log('getTotalTaxes.call(litva) ', getTotalTaxes.call(litva));
+// console.log('getTotalTaxes.call(ukraine) ',getTotalTaxes.call(ukraine));
+// console.log('getTotalTaxes.call(latvia) ', getTotalTaxes.call(latvia));
+// console.log('getTotalTaxes.call(litva) ', getTotalTaxes.call(litva));
 
-console.log('getTotalTaxes.call(99) ',getTotalTaxes.call(1000));
+// console.log('getTotalTaxes.call(99) ',getTotalTaxes.call(1000));
 
-/* для виводу в консоль кожні 10 секунд використайте setInterval  */
-setInterval(() => {console.log('getMySalary(ukraine) ',getMySalary.call(ukraine))}, 10000);
+// /* для виводу в консоль кожні 10 секунд використайте setInterval  */
+// setInterval(() => {console.log('getMySalary(ukraine) ',getMySalary.call(ukraine))}, 10000);

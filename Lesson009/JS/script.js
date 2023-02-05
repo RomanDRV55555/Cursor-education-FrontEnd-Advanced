@@ -1,4 +1,4 @@
-function getRandomColour() {
+export function getRandomColour() {
 
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
@@ -44,5 +44,5 @@ function generateBlocksInterval() {
         , 1000)
 }
 
-generateBlocks();
-generateBlocksInterval();
+// generateBlocks();
+// generateBlocksInterval();

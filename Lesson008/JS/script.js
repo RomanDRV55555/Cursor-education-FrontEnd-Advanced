@@ -69,7 +69,7 @@ console.log(newStudent.marks);
 
 /* Створіть новий клас BudgetStudent, який повністю наслідує клас Student */
 
-class BudgetStudent extends Student {
+export class BudgetStudent extends Student {
 
     static sumBudgetScholarship = 1400;
 

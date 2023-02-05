@@ -11,8 +11,8 @@ async function getRandomChinese(length = 0) {
     return strResult;
 };
 
-getRandomChinese(10).then(resolve => {
-    document.writeln(` <h5> getRandomChinese(10) ${resolve} </h5>`);
-    console.log(resolve);
-}
-);
+// getRandomChinese(10).then(resolve => {
+//     document.writeln(` <h5> getRandomChinese(10) ${resolve} </h5>`);
+//     console.log(resolve);
+// }
+// );

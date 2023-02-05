@@ -92,21 +92,21 @@ function getBestStudent(arrStudents = []){
     return arrStudents.find(curEl => getAverageMark(curEl) == Math.max(... arrStudents.map(curEl => (getAverageMark(curEl))))).name;
 };
 
-function calculateWordLetters(testWord = ''){
+export function calculateWordLetters(testWord = ''){
     acc = {};
     Array.from(new Set(testWord)).map((curEl) => (acc[curEl] = countLetter(curEl, testWord)));
     return acc;
 };
 
-console.log('getSubjects(students[0] ',getSubjects(students[0]));
+// console.log('getSubjects(students[0] ',getSubjects(students[0]));
 
-console.log('getAverageMark(students[0]) ', getAverageMark(students[0]));
+// console.log('getAverageMark(students[0]) ', getAverageMark(students[0]));
 
-console.log('getStudentInfo(students[0]) ', getStudentInfo(students[0]));
+// console.log('getStudentInfo(students[0]) ', getStudentInfo(students[0]));
 
-console.log('getStudentsNames(students) ', getStudentsNames(students));
+// console.log('getStudentsNames(students) ', getStudentsNames(students));
 
-console.log('getBestStudent(students) ', getBestStudent(students));
+// console.log('getBestStudent(students) ', getBestStudent(students));
 
-console.log('calculateWordLetters("тест") ', calculateWordLetters("тест"));
+// console.log('calculateWordLetters("тест") ', calculateWordLetters("тест"));
 
